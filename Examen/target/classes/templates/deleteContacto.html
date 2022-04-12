@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Borrar contacto</h3><br/>
+<form th:action="@{/deleteContacto/{id}(id=${contacto.id})}" th:object="${contacto}" method="post">
+    Estas seguro de eliminar este contacto? <span th:text="${contacto.nombre}">Nombre</span> <span th:text="${contacto.apellido1}">Apellido1</span> <br/>
+
+    <input type="submit" value="Delete">
+    <a href="/">Devolverme al inicio</a>
+</form>
+
+</body>
+</html>

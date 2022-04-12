@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Registro de Trabajo</h3>
+<form action="#" th:action="@{/registrarTrabajo}" th:object="${trabajo}" method="post">
+    <label for="name">Tipo de auditoria</label>
+    <input type="text" th:field="*{auditoria}" id="name">
+
+    <label for="fecha">Fecha(MM/dd/yyyy)</label>
+    <input type="text" th:field="*{fechaAuditoria}" id="fecha">
+
+    <label
+            for="cliente">Seleccione al cliente al cual se le va arealizar la auditoria</label> <select name="cliente" id="cliente" th:field="*{cliente}">
+    <option th:each="entry : ${cliente}" th:value="${entry.id}" th:text="${entry.razon}"></option>
+</select> <br />
+
+    <label
+            for="auditor">Seleccione al auditor que va a asignar para este trabajo</label> <select name="auditor" id="auditor" th:field="*{auditor}">
+        <option th:each="entry : ${auditor}" th:value="${entry.id}" th:text="${entry.nombre}"></option>
+</select> <br />
+
+
+    <input type="submit" value="Registrar">
+</form>
+<a href="/">Devolverme al inicio</a>
+</body>
+</html>

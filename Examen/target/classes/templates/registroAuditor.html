@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Auditor</title>
+</head>
+
+<body>
+<h3>Registro Auditor</h3>
+<form action="#" th:action="@{/registroAuditor}" th:object="${auditor}" method="post">
+    <label for="name">Nombre</label>
+    <input type="text" th:field="*{nombre}" id="name">
+
+    <label for="apellido1">Apellido 1</label>
+    <input type="text" th:field="*{apellido1}" id="apellido1">
+
+    <label for="apellido2">Apellido 2</label>
+    <input type="text" th:field="*{apellido2}" id="apellido2">
+
+    <label for="direccion">Direccion</label>
+    <input type="text" th:field="*{direccion}" id="direccion">
+
+    <label for="telefono">Telefono</label>
+    <input type="number" th:field="*{telefono}" id="telefono">
+
+    <label for="fechaN">Fecha de nacimiento(MM/dd/yyyy)</label>
+    <input type="text" th:field="*{fechaNacimiento}" id="fechaN">
+
+    <label for="email">Email</label>
+    <input type="email" th:field="*{email}" id="email">
+
+    <label for="disponibilidad">Tiene disponibilidad para viajar:</label>
+    <select id="disponibilidad" th:field="*{disponibilidad}" size="2">
+        <option value="true">Si</option>
+        <option value="false">No</option>
+
+    </select>
+
+    <label for="estado">Elija el estado:</label>
+    <select id="estado" th:field="*{estado}" size="2">
+        <option value="a">Activo</option>
+        <option value="i">Inactivo</option>
+    </select>
+
+    <input type="submit" value="Registrar">
+</form>
+<a href="/">Devolverme al inicio</a>
+</body>
+</html>

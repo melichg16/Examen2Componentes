@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Lista de Contactos</h3>
+<div>
+
+    <ul>
+        <div th:each="entry : ${personaContacto}">
+            <li><span><bold>Nombre: </bold></span><span
+                    th:text="${entry.nombre}"></span><br /><br />
+                <span><bold>Apellido1: </bold></span><span
+                        th:text="${entry.apellido1}"></span><br /><br />
+                <span><bold>Apellido2: </bold></span><span
+                        th:text="${entry.apellido2}"></span><br /><br />
+                <span><bold>Email: </bold></span><span
+                        th:text="${entry.email}"></span><br /><br />
+                <span><bold>Telefono: </bold></span><span
+                        th:text="${entry.telefono}"></span><br /><br />
+                <span><bold>Cliente asociado: </bold></span><span
+                        th:text="${entry.cliente.razon}"></span><br /><br />
+                <a
+                        th:href="@{/editarContacto/{id}(id=${entry.id})}">Editar </a><br />
+                <a th:href="@{/deleteContacto/{id}(id=${entry.id})}">Eliminar</a><br />
+
+
+
+            </li>
+        </div>
+        <a href="/">Devolverme al inicio</a>
+    </ul>
+</div>
+</body>
+</html>

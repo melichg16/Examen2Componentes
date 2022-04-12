@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Lista de Trabajos</h3>
+<div>
+
+    <ul>
+        <div th:each="entry : ${trabajos}">
+            <li><span><bold>Tipo de auditoria: </bold></span><span
+                    th:text="${entry.auditoria}"></span><br /><br />
+                <span><bold>Fecha: </bold></span><span
+                        th:text="${entry.fechaAuditoria}"></span><br /><br />
+                <h3>Cliente:</h3>
+                <span><bold>Nombre: </bold></span><span
+                        th:text="${entry.cliente.razon}"></span><br /><br />
+                <h3>Auditor:</h3>
+                <span><bold>Nombre: </bold></span><span
+                        th:text="${entry.auditor.nombre}"></span><br /><br />
+            </li>
+
+
+
+
+</div>
+        <a href="/">Devolverme al inicio</a>
+    </ul>
+</div>
+
+</body>
+</html>

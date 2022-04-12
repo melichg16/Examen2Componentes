@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Lista de Clientes</h3>
+<div>
+
+    <ul>
+        <div th:each="entry : ${clientes}">
+            <li><span><bold>Nombre: </bold></span><span
+                    th:text="${entry.razon}"></span><br /><br />
+                <span><bold>Cedula Juridica: </bold></span><span
+                        th:text="${entry.cedJuridica}"></span><br /><br />
+                <span><bold>Direccion: </bold></span><span
+                        th:text="${entry.direccion}"></span><br /><br />
+                <span><bold>Telefono: </bold></span><span
+                        th:text="${entry.telefono}"></span><br /><br />
+
+
+
+            </li>
+            <h3>Contactos:</h3>
+            <div th:each="entry : ${personaContacto}">
+                <span><bold>Nombre: </bold></span><span
+                    th:text="${entry.nombre}"></span><br /><br />
+                <span><bold>Apellido1: </bold></span><span
+                    th:text="${entry.apellido1}"></span><br /><br />
+                <span><bold>Apellido2: </bold></span><span
+                    th:text="${entry.apellido2}"></span><br /><br />
+                <span><bold>Email: </bold></span><span
+                    th:text="${entry.email}"></span><br /><br />
+                <span><bold>Telefono: </bold></span><span
+                    th:text="${entry.telefono}"></span><br /><br />
+
+
+
+            </div>
+        </div>
+        <a href="/">Devolverme al inicio</a>
+    </ul>
+</div>
+
+</body>
+</html>
